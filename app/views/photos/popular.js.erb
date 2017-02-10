@@ -1,0 +1,3 @@
+<%# hide 'load more' button and load next page of images %>
+$(".btn").hide();
+$(".container").append("<%= escape_javascript(render partial: 'image_grid') %>"); 

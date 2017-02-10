@@ -1,0 +1,35 @@
+<% @popular_photos.each do |photo| %>
+
+	<a href="https://500px.com<%= photo["url"] %>">
+
+	<div class="image" style="background-image: url(<%= photo["image_url"] %>);">
+			
+			<div class="image-cover">
+
+            <div class="image-info top">
+			<div class="title">
+			  <%= photo["name"] %>
+			</div>
+            </div>
+
+			<div class="image-info bottom">
+			
+			<div class="avatar-border">
+			  <div class="avatar" style="background-image: url(<%= photo["user"]["userpic_url"] %>);">
+			  </div>
+		    </div>
+
+			<div class="name">
+			  <%= photo["user"]["firstname"] %>
+			  <%= photo["user"]["lastname"] %>
+			</div>
+		</div>
+
+			</div>
+	</div>
+</a>
+<% end %>
+
+<hr/>
+
+<%= link_to "Load more", root_path(:page => @page_number), remote: true, class: "btn" %>
